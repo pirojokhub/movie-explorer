@@ -1,0 +1,34 @@
+@use "../vars.scss";
+.header {
+	&-wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 80px;
+	}
+}
+//Navbar
+.nav {
+	&-list {
+		display: flex;
+		color: vars.$color-black;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 18px;
+		letter-spacing: 0%;
+	}
+	&-item {
+		a {
+			color: vars.$color-black;
+		}
+	}
+	&-btn {
+		margin-right: 20px;
+	}
+	&-account {
+		padding: 8px 20px;
+		background: vars.$color-light-gray;
+		border-radius: 20px;
+		margin-top: -8px;
+	}
+}

@@ -1,0 +1,86 @@
+/* ProfileForm.css */
+
+.profile-form {
+	max-width: 410px;
+	margin: 40px auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.profile-form__title {
+	font-size: 24px;
+	font-weight: 600;
+	color: #1f2430;
+	margin-top: 0;
+	margin-bottom: 120px;
+	text-align: center;
+}
+
+.profile-form__group {
+	// margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	// margin-top: 10px;
+}
+input::placeholder {
+	color: #000;
+}
+
+.profile-form__label {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 100%;
+	letter-spacing: 0px;
+	padding-top: 5px;
+}
+
+.profile-form__input {
+	width: 100%;
+	text-align: right;
+	::placeholder {
+		color: #000;
+	}
+}
+
+.profile-form__input:focus {
+	border-color: #a0a0a0;
+	// background: #ffffff;
+	box-shadow: 0 0 0 2px #eaf0ff;
+	outline: none;
+}
+
+.profile-form__button {
+	margin-top: 180px;
+	width: 100%;
+	padding: 0 16px;
+	border: none;
+	border-radius: 10px;
+
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 100%;
+	letter-spacing: 0px;
+	text-align: center;
+	vertical-align: middle;
+
+	&_exit {
+		margin-top: 16px;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 100%;
+		letter-spacing: 0px;
+		text-align: center;
+		vertical-align: middle;
+		color: red;
+	}
+}
+
+// .profile-form__button:hover {
+// 	background: #2346cc;
+// }
+
+.line-1 {
+	border: 1px rgba(232, 232, 232, 1) solid;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}

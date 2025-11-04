@@ -1,0 +1,78 @@
+/* loginForm.css */
+
+.login-form {
+	max-width: 400px;
+	margin: 40px auto;
+	text-align: left;
+}
+
+.login-form__title {
+	font-size: 24px;
+	font-weight: 600;
+	color: #1f2430;
+	margin-top: 0;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	// text-align: center;
+}
+
+.login-form__group {
+	margin-bottom: 20px;
+	text-align: left;
+	// margin-bottom: 20px;
+}
+
+.login-form__label {
+	display: block;
+	margin-bottom: 8px;
+	font-size: 14px;
+	font-weight: 500;
+	color: #5b6470;
+}
+
+.login-form__input {
+	width: 100%;
+	height: 44px;
+	padding: 0 12px;
+	border: 1px solid #e7e9ee;
+	border-radius: 8px;
+	background: #f6f8fb;
+	font-size: 16px;
+	box-sizing: border-box; /* Важно для padding */
+}
+
+.login-form__input:focus {
+	border-color: #2f5aff;
+	background: #ffffff;
+	box-shadow: 0 0 0 3px #eaf0ff;
+	outline: none;
+}
+
+.login-form__hint {
+	display: block;
+	margin-top: 6px;
+	font-size: 12px;
+	color: #5b6470;
+}
+
+.login__btn {
+	width: 100%;
+	height: 44px;
+	padding: 0 16px;
+	border: none;
+	border-radius: 10px;
+	background: #2f5aff;
+	color: #ffffff;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+	margin-top: 82px;
+}
+
+.login-form__button:hover {
+	background: #2346cc;
+}
+.row {
+	text-align: center;
+}

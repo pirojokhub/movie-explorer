@@ -1,0 +1,13 @@
+// Шрифты
+@use "./fonts";
+
+//scss коспоненты
+@use "./components/app";
+@use "./components//header.scss";
+@use "./components//search-movis.scss";
+@use "./components//hero.scss";
+@use "./components/profil.scss";
+@use "./components//login.scss";
+// scss компоненты с Child
+//Сбрось стилей
+@import "./reset.css";
