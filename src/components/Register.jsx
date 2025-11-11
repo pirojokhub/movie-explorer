@@ -1,24 +1,32 @@
 import { useState } from 'react';
-import { useAuth } from '../utils/useAuth';
-import { Link } from 'react-router-dom';
+import { useAuth } from '../auth/useAuth';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Register() {
-  const { signUp, authError } = useAuth();
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const { signUp } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
-
-  async function handleSubmit(e) {
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    password: '',
+  });
+  const navigate = useNavigate();
+  const onChange = (e) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+  console.log(form);
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     try {
-      setIsLoading(true);
-      await signUp(email, password, { name });
-      alert('Если включено подтверждение почты — проверьте email.');
+      await signUp(form.email, form.password, { name: form.name });
+      navigate('/profile');
+    } catch (error) {
+      alert(error.message);
     } finally {
       setIsLoading(false);
     }
-  }
+  };
   return (
     <form className="login-form" onSubmit={handleSubmit}>
       <svg
@@ -45,10 +53,11 @@ function Register() {
         </label>
         <input
           type="text"
+          name="name"
           className="login-form__input"
-          placeholder="Username (необязательно)"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          placeholder="Имя"
+          value={form.name}
+          onChange={onChange}
           required
         />
       </div>
@@ -60,10 +69,11 @@ function Register() {
         <input
           type="email"
           id="email"
+          name="email"
           className="login-form__input"
           placeholder="example@mail.com"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={form.email}
+          onChange={onChange}
           required
         />
       </div>
@@ -74,12 +84,13 @@ function Register() {
         </label>
         <input
           type="password"
+          name="password"
           id="password"
           className="login-form__input"
-          placeholder="••••••••"
+          placeholder="• • • • • • • •"
           // 4. Связываем инпут с состоянием
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={form.password}
+          onChange={onChange}
           minLength={8}
           required
         />
@@ -89,7 +100,7 @@ function Register() {
       <button className="login__btn" disabled={isLoading}>
         {isLoading ? 'Регистрируем...' : 'Зарегистрироваться'}
       </button>
-      {authError && <p className="err">{authError}</p>}
+      {/* {authError && <p className="err">{authError}</p>} */}
       <div className="row">
         <Link className="link" to="/login">
           У меня уже есть аккаунт

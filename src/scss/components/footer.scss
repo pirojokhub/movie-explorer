@@ -1,0 +1,18 @@
+.footer {
+  &__name {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    text-align: center;
+    color: gray;
+  }
+  &__contacts {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__social_btn a {
+    color: black;
+    margin-right: 20px;
+  }
+}

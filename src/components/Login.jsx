@@ -1,25 +1,32 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useAuth } from '../utils/useAuth';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../auth/useAuth';
 
 export default function LoginPage() {
-  const { signIn, authError } = useAuth();
+  // cons { signIn, authError } = useAuth();t
+  const { signIn } = useAuth();
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  async function handleSubmit(e) {
+  const handleLogin = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     try {
-      setIsLoading(true);
       await signIn(email, password);
+      navigate('/profile');
+    } catch (error) {
+      alert(error.message);
     } finally {
       setIsLoading(false);
     }
-  }
+  };
+
+  // return { email, password, setEmail, setPassword, handleLogin, isLoading };
 
   return (
-    <form className="login-form" onSubmit={handleSubmit}>
+    <form className="login-form" onSubmit={handleLogin}>
       <svg
         width="38"
         height="38"
@@ -61,7 +68,7 @@ export default function LoginPage() {
           type="password"
           id="password"
           className="login-form__input"
-          placeholder="••••••••"
+          placeholder="• • • • • • • •"
           // 4. Связываем инпут с состоянием
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -73,7 +80,7 @@ export default function LoginPage() {
       <button className="login__btn" disabled={isLoading}>
         {isLoading ? 'Входим...' : 'Войти'}
       </button>
-      {authError && <p className="err">{authError}</p>}
+      {/* {authError && <p className="err">{authError}</p>} */}
       <div className="row">
         Ещё не зарегистрированы?
         <Link className="link" to="/register">

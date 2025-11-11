@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useAuth } from '../utils/useAuth';
+import { useAuth } from '../auth/useAuth';
 
 export default function ResetPage() {
   const { updatePassword, authError } = useAuth();

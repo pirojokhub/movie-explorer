@@ -1,13 +1,14 @@
 // Шрифты
-@use "./fonts";
+@use './fonts';
 
 //scss коспоненты
-@use "./components/app";
-@use "./components//header.scss";
-@use "./components//search-movis.scss";
-@use "./components//hero.scss";
-@use "./components/profil.scss";
-@use "./components//login.scss";
+@use './components/app';
+@use './components//header.scss';
+@use './components//search-movis.scss';
+@use './components//hero.scss';
+@use './components/profil.scss';
+@use './components//login.scss';
+@use './components/footer.scss';
 // scss компоненты с Child
 //Сбрось стилей
-@import "./reset.css";
+@import './reset.css';

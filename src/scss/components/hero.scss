@@ -1,55 +1,57 @@
-@use "../vars.scss";
+@use '../vars.scss';
 .hero {
-	&-wrapper {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		grid-template-rows: repeat(1, 1fr);
-		padding-right: 60px;
-		padding-left: 60px;
-	}
-	.movies-card {
-		max-width: 270px;
-		height: 235px;
-		margin-bottom: 30px;
-		img {
-			max-width: 270px;
-			height: 155px;
-		}
-		&__title {
-			margin-top: 10px;
-			margin-bottom: -10px;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			h2 {
-				font-weight: 600;
-				font-size: 18px;
-				line-height: 100%;
-				letter-spacing: 0px;
-			}
-		}
-		&__favourites_btn {
-			width: 30px;
-			height: 30px;
-			background: vars.$color-light-gray;
-			border-radius: 36px;
-		}
-		&__time {
-			display: flex;
-			align-items: center;
-			margin-top: 9px;
-			span {
-				font-weight: 400;
-				font-size: 13px;
-				line-height: 100%;
-				letter-spacing: 0px;
-				color: vars.$color-gray;
-				margin-right: 10px;
-				// vertical-align: middle;
-			}
-			svg {
-				margin-top: -2px;
-			}
-		}
-	}
+  margin-bottom: 80px;
+  &-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    padding-right: 60px;
+    padding-left: 60px;
+    // margin-bottom: 80px;
+  }
+  .movies-card {
+    max-width: 270px;
+    height: 235px;
+    margin-bottom: 30px;
+    img {
+      max-width: 270px;
+      height: 155px;
+    }
+    &__title {
+      margin-top: 10px;
+      margin-bottom: -10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      h2 {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 100%;
+        letter-spacing: 0px;
+      }
+    }
+    &__favourites_btn {
+      width: 30px;
+      height: 30px;
+      background: vars.$color-light-gray;
+      border-radius: 36px;
+    }
+    &__time {
+      display: flex;
+      align-items: center;
+      margin-top: 9px;
+      span {
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 100%;
+        letter-spacing: 0px;
+        color: vars.$color-gray;
+        margin-right: 10px;
+        // vertical-align: middle;
+      }
+      svg {
+        margin-top: -2px;
+      }
+    }
+  }
 }

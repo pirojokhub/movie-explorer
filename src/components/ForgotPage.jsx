@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../utils/useAuth';
+import { useAuth } from '../auth/useAuth';
 
 export default function ForgotPage() {
   const { resetPassword, authError } = useAuth();
